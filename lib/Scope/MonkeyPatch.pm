@@ -4,6 +4,7 @@ use Moo;
 
 has [qw/code package function/] => is => 'ro', required => 1;
 
+# Stores a reference to the original function that has been mocked out
 has _original_code => is => 'rw';
 
 # returns true if the monkey patch is in place
@@ -13,6 +14,7 @@ sub _active {
         && $self->_current_code == $self->code;
 }
 
+# Returns a code ref to the function that is live
 sub _current_code {
     my $self = shift;
     return $self->package->can($self->function)
@@ -20,6 +22,7 @@ sub _current_code {
                " because it doesn't exist";
 }
 
+# Replaces `function` with your code
 sub activate {
     my $self = shift;
 
@@ -34,6 +37,7 @@ sub activate {
     return $self;
 }
 
+# Restores the original function
 sub deactivate {
     my $self = shift;
 

@@ -40,17 +40,17 @@ Caveats
 =======
 
  * It is not a replacement for good module design
- * Too much mocking often results in test suites that pass when the code
+ * Too much mocking may lead to test suites that pass when the code
    is actually broken
 
 See Also
 ========
 
  * L<Class::Mockable> tries to solve a similar problem by making it easy
-   to shim specific methods in a module that you control. However, the problem
-   in many cases is you don't control the module that you want to test against.
+   to shim specific methods in a module that you control. However, in many
+   cases you don't control the module that you want to test against.
 
-   L<Scope::MonkeyPatch> approach makes the tests responsible for mocking
+   L<Scope::MonkeyPatch> makes the tests responsible for mocking
    rather than the module that you are interacting with.
 
    L<Class::Mockable> also does not support mocking functions that return
@@ -67,11 +67,6 @@ License
 Scope::MonkeyPatch is Copyright (C) 2014, Andy Jones
 
 This module is free software; you
-can redistribute it and/or modify it under the same terms
-as Perl 5.10.0. For more details, see the full text of the
-licenses in the directory LICENSES.
-
-This [library|program|code|module] is free software; you
 can redistribute it and/or modify it under the same terms
 as Perl 5.10.0. For more details, see the full text of the
 licenses in the directory LICENSES.
